@@ -42,12 +42,12 @@ function arrayrandom(maxvalue,lengtharray){
     return array;
 }
 
-const numbers = arrayrandom(1000,10000);
+const numbers = arrayrandom(100,100);
 
 
 console.log(Date.now());
-console.log(tri(numbers,'asc'));
-console.log(Date.now());
-
 console.log(tri2(numbers,'asc'));
 console.log(Date.now());
+
+
+
