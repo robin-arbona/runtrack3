@@ -1,7 +1,5 @@
-window.addEventListener('load',init);
-function init(){
-    document.addEventListener('keypress',keylogger);
-}
+document.addEventListener('keypress',keylogger);
+
 
 function keylogger(event){
     let textarea = document.getElementById("keylogger");
