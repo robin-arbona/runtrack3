@@ -13,8 +13,8 @@ let konami=[
     'arrowright',
     'arrowleft',
     'arrowright',
-    'a',
-    'b'
+    'b',
+    'a'
 ]
 
 let history = [];
