@@ -1,9 +1,10 @@
+let par = '<p>le $ est un bon élément monétaire. Le # de twitter est une bonne I D. Il faudra faire le point avec la classe pour cacher cet élément.</p>';
 $(document).ready(()=>{
-    $("a").click(function(event){
-        event.preventDefault(); 
-        console.log(this);
-        $(this).hide("slow");
-    });
-    $("a").addClass("test");
+    $('#button').click(function(){
+        $(par).appendTo("#citation")
+    })
+    $('#button-hide').click(function(){
+        $('#citation').empty()
+    })
 }
 )
