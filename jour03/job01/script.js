@@ -1,0 +1,9 @@
+$(document).ready(()=>{
+    $("a").click(function(event){
+        event.preventDefault(); 
+        console.log(this);
+        $(this).hide("slow");
+    });
+    $("a").addClass("test");
+}
+)
