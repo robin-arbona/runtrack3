@@ -13,9 +13,9 @@ function init(){
     for (let i = 1; i <= 9; i++) {
         $(`<div style="height:100px;width:100px;" id="case${i}"></div>`).appendTo("#board");
     }
-    let rdTable = getRandomTable(9);
-    for (let i = 0; i < 9; i++) {
-        $(`<img id="img${rdTable[i]}" src="img/${rdTable[i]}.png" style="height:100px;width:100px;">`).appendTo(`#case${i}`)
+    let rdTable = getRandomTable(8);
+    for (let i = 0; i < rdTable.length; i++) {
+        $(`<img id="img${rdTable[i]}" src="img/${rdTable[i]}.png" style="height:100px;width:100px;">`).appendTo(`#case${i+1}`)
     }
     let cases = document.querySelector('#board').childNodes;
     cases.forEach(element => {
