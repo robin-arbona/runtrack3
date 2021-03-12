@@ -1,6 +1,6 @@
 <?php
 
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 
 $db = new PDO('mysql:host=localhost;dbname=utilisateurs', 'root', '');
 $sth = $db->query('SELECT * FROM utilisateurs');

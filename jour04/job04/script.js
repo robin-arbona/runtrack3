@@ -8,7 +8,8 @@ function init(){
        $.ajax({
            url:'users.php',
            dataType:'json'
-       }).done((users)=>{
+       }).done((users,state)=>{
+           console.log(state);
            $('#result').empty()
            console.log(users);
            users.forEach(user => {
