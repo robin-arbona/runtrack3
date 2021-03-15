@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
     function chooseStyle(){
-        console.log('resize');
         if (window.matchMedia("(min-width: 1600px)").matches) {
             document.querySelectorAll(".square-div").forEach((element)=>{
                 element.style.width = (window.innerWidth)/4 -10 + 'px';
