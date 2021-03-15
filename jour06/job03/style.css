@@ -1,0 +1,10 @@
+body{
+    display: inline-block;
+}
+.square-div{
+    margin: auto;
+    background-color: #88c1d0;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
