@@ -7,6 +7,6 @@
     <p><small><strong>Le sens étendu désigne l'univers dans son ensembmle.</strong></small></p>
 </div>
 <button id="rebootButton" type="button" class="btn btn-danger">Rebooter le monde</button>
-<div class="spinner-border text-primary" role="status">
+<div id="spinner" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>

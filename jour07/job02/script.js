@@ -1,3 +1,11 @@
+const pages = ['home.php','lala.php','lolo.php'];
+let currentPage = 0;
+let keyHistory = [];
+const keyCombination = ['d','g','c'];
+const textColor=['text-primary','text-secondary','text-success','text-danger','text-warning','text-info','text-light','text-dark'];
+let email = '';
+let password = '';
+
 document.addEventListener('DOMContentLoaded',()=>{
     initNavLink();
     initModal();
@@ -5,6 +13,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     initPagination();
     initList();
     initProgressBar();
+    initCode();
+    initLastForm();
 })
 
 function initNavLink(){
@@ -12,9 +22,7 @@ function initNavLink(){
 }
 
 function initModal(){
-    var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
-        keyboard: false
-      })
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'))
     var myInput = document.getElementById('buttonModal');
 
     myInput.addEventListener('click',function(){
@@ -35,8 +43,6 @@ function initRebootButton(){
     })
 }
 
-const pages = ['home.php','lala.php','lolo.php'];
-let currentPage = 0;
 function initPagination(){
     for (let i = 0; i < pages.length; i++) {
         const page = pages[i];
@@ -86,11 +92,6 @@ function initList(){
     })
 }
 
-/*
-aria-valuenow="85"
-style="width: 85%"
-*/
-
 function initProgressBar(){
     $('#progress-plus').click(function(){
         let value = $('#progress-bar').attr('aria-valuenow')
@@ -108,4 +109,58 @@ function initProgressBar(){
             $('#progress-bar').attr('style','width: ' + value + '%');
         }
     })
+}
+
+function initCode(){
+    $(document).keypress((e)=>{
+        keyHistory.push(e.key);
+        if(keyHistory.length>2){
+            let combination = keyHistory.slice(keyHistory.length-3);
+            let counter = 0;
+            for (let i = 0; i < keyCombination.length; i++) {
+                if(keyCombination[i]==combination[i].toLowerCase()){
+                    counter++
+                }
+            }
+            if(counter==3)
+                showModalForm();
+        }
+    })
+}
+
+function showModalForm(){
+    var myModal = new bootstrap.Modal(document.getElementById('modalForm'))
+    let inputsValue = '<p>';
+    for (let i = 1; i < 5; i++) {
+        let selector = '#input-' + i;
+        inputsValue += $(selector).val() + " | "
+    }
+    inputsValue += '</p>';
+    $('#modalForm-body').empty()
+    $(inputsValue).appendTo('#modalForm-body');
+
+    myModal.show();
+}
+
+function initLastForm(){
+    $('#submitForm').click(function(e){
+        email = $('#email').val();
+        password = $('#password').val();
+
+        e.preventDefault();
+
+        if(email.length>0 && password.length>0){
+            changeSpinnerColor();
+        }
+    })
+    
+}
+
+function changeSpinnerColor(){
+    textColor.forEach(element => {
+        $('#spinner').removeClass(element)
+    });
+    let rdNb = Math.round(Math.random()*textColor.length);
+    $('#spinner').addClass(textColor[rdNb]);
+    
 }
