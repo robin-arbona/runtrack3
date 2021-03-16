@@ -42,8 +42,8 @@
             <h1 class="text-center">LaPlateforme_</h1>
         </div>
         <div class="row justify-items-center">
-            <div class="col-3 justify-content-center">
-                <div class="card" style="width: 18rem;">
+            <div class="col mb-3">
+                <div class="card">
                     <img src="unnamed.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Un papillon</h5>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7 pt-4 pb-4 bg-light rounded">
+            <div class="col-12 col-md-6 pt-4 pb-4 bg-light rounded mb-3">
                 <h1 class="display-3">Bonjour, monde!</h1>
                 <p><small>Il existe plusieurs visions du terme</small></p>
                 <p>le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'experience ou la raison</p>
@@ -86,7 +86,7 @@
 
 
             </div>
-            <div class="col-2">
+            <div class="col mb-3">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
                         Limbes
